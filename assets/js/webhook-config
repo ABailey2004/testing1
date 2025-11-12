@@ -1,0 +1,64 @@
+/**
+ * Blue Light RPC Application Webhook Configuration
+ * 
+ * SETUP INSTRUCTIONS:
+ * 
+ * 1. CREATE DISCORD WEBHOOK:
+ *    - Go to your Discord server
+ *    - Right-click on the channel where you want applications sent
+ *    - Click "Edit Channel" > "Integrations" > "Webhooks"
+ *    - Click "Create Webhook"
+ *    - Copy the webhook URL
+ * 
+ * 2. CONFIGURE WEBHOOK:
+ *    - Replace 'YOUR_DISCORD_WEBHOOK_URL_HERE' in application.html
+ *    - With your actual webhook URL
+ * 
+ * EXAMPLE:
+ * const WEBHOOK_URL = 'https://discord.com/api/webhooks/1234567890/abcdefghijklmnopqrstuvwxyz';
+ * 
+ * WEBHOOK FORMAT:
+ * The application sends 4 separate embeds to Discord:
+ * - Personal Information (Blue)
+ * - Gaming & Experience (Green) 
+ * - Community & Background (Yellow)
+ * - Assessment & Background (Purple)
+ * 
+ * SECURITY NOTES:
+ * - Keep your webhook URL private
+ * - Consider rate limiting on your server
+ * - Monitor webhook usage in Discord
+ * - You can regenerate the webhook URL if compromised
+ * 
+ * TESTING:
+ * - Test with a separate webhook first
+ * - Check that all form fields are captured
+ * - Verify embed formatting in Discord
+ * - Test error handling (try with invalid webhook)
+ */
+
+// Example webhook configuration function
+function setupWebhook() {
+    // Replace this URL with your actual Discord webhook URL
+    const WEBHOOK_URL = 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN';
+    
+    // You can also add additional webhook settings here
+    const WEBHOOK_CONFIG = {
+        username: 'Blue Light RPC Applications',
+        avatar_url: 'https://your-domain.com/assets/images/community_logo.png'
+    };
+    
+    return {
+        url: WEBHOOK_URL,
+        config: WEBHOOK_CONFIG
+    };
+}
+
+// Example of how to add the webhook URL to your payload
+function addWebhookBranding(payload) {
+    // Add consistent branding to all embeds
+    payload.username = 'Blue Light RPC Applications';
+    payload.avatar_url = '/assets/images/community_logo.png';
+    
+    return payload;
+}
