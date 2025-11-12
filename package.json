@@ -1,0 +1,27 @@
+{
+  "name": "blue-light-rpc-website",
+  "version": "1.0.0",
+  "description": "Professional emergency services roleplay community website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ABailey2004/testing1.git"
+  },
+  "keywords": [
+    "roleplay",
+    "emergency-services",
+    "community",
+    "discord",
+    "website"
+  ],
+  "author": "Blue Light Roleplay Community",
+  "license": "MIT",
+  "homepage": "https://bluelightrpc.uk/",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}
